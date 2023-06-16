@@ -89,9 +89,12 @@ class _BigBottonBackground extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    final Size size = MediaQuery.of(context).size;
+
     return Container(
-      width: double.infinity,
-      height: 100,
+      width: size.width,
+      height: size.height * 0.1,
       margin: const EdgeInsets.all( 20 ),
       decoration: BoxDecoration(
         boxShadow: <BoxShadow>[

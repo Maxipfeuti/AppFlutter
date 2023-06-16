@@ -6,9 +6,10 @@ class HeladosPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
+    final Size size = MediaQuery.of(context).size;
+
     return Container(
-      width:  130,
-      height: 130,
+      height: size.height * 0.14,
       decoration: BoxDecoration(
         color: const Color (0xffF5D7EB),
         borderRadius: BorderRadius.circular(6), 
@@ -28,16 +29,12 @@ class HeladosPage extends StatelessWidget {
             ),
           ),
   
-          Positioned(
-            right:  -5,
-            bottom: -25,
-            child: Transform.rotate(
-              angle: 0.2,
-              child: const Image(
-                width:  100,
-                height: 100,
-                image: AssetImage('assets/imgs/helado.png')
-              ),
+          Transform.rotate(
+            angle: 0.2,
+            child: const Image(
+              //width:  100,
+              //height: 100,
+              image: AssetImage('assets/imgs/helado.png')
             ),
           )
         ],

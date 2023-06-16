@@ -8,6 +8,8 @@ export 'custom_list_view_page.dart';
 
 export 'desayuno_listview_page.dart';
 
+export 'navigation_page.dart';
+
 
 export 'contenedores/hamburguesa_page.dart';
 export 'contenedores/mercaderia_bolsa_page.dart';

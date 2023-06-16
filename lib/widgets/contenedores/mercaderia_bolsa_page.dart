@@ -8,40 +8,44 @@ class MecaderiaBolsaPage extends StatelessWidget {
     final sizeScreen = MediaQuery.of(context).size;
 
     return Container(
-      width: sizeScreen.width * 0.58,
-      height: sizeScreen.height * 0.12,
+      height: sizeScreen.height * 0.11,
       decoration: BoxDecoration(
         color: const Color(0xffE92B74),
         borderRadius: BorderRadius.circular(6)
       ),
-      child: Stack( 
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          
-          Positioned(
-            top: 30,
-            left: 10,
-            child: Text(
-              'Pedidos Ya Market',
-              style: TextStyle(
-                fontSize: 18, 
-                fontWeight: FontWeight.bold,
-                color: Colors.white.withOpacity(0.8)
-              ),
+
+          Expanded(
+            flex: 1,
+            child: Column(
+              children: [
+
+                const SizedBox(height: 30),
+                
+                Text(
+                  'Pedidos Ya Market',
+                  style: TextStyle(
+                    fontSize: 18, 
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white.withOpacity(0.8)
+                  ),
+                ),
+              
+              ],
             ),
           ),
-    
-          const Positioned(
-            left: 130,
-            bottom: -63,
+
+          const Align(
+            alignment: Alignment.centerRight,
             child: Image(
-              width:  200,
-              height: 200,
               image: AssetImage(
               'assets/imgs/bolsa_02.png',
               )
             ),
           ),
-        ]
+        ],
       )
     );
   }

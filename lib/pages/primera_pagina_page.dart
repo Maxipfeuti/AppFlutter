@@ -33,6 +33,10 @@ class PrimeraPaginaPage extends StatelessWidget {
             SizedBox( height: 25 ),
 
             DesayunoListviewPage(),
+
+            SizedBox( height: 37 ),
+
+            NavigationPage()
           ],
         ),
       )
@@ -50,41 +54,49 @@ class ContenedorPrincipal extends StatelessWidget {
 
     final sizeScreen = MediaQuery.of(context).size;
 
-    return Container(
-      width: sizeScreen.width,
-      height: sizeScreen.height * 0.27,
-      child: const Stack(
-        children: [
-
-          Positioned(
-            left: 20,
-            child: HamburguesaPage()
-          ),
-
-          Positioned(
-            right: 20,
-            child: Column(
-              children: [
-                
-                MecaderiaBolsaPage(),
-
-                 SizedBox(height: 20),
-                
-                Row(
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20),
+      child: SizedBox(
+        height: sizeScreen.height * 0.26,
+        child: const Row(
+          children: [
+    
+            Expanded(
+              child: HamburguesaPage()
+            ),
+    
+            SizedBox(width: 10),
+                  
+            Expanded(
+              flex: 2,
+              child: SingleChildScrollView(
+                child: Column(
                   children: [
-                    MercadoPage(),
-
-                    SizedBox(width: 15),
-
-                    HeladosPage(),
-                  ],
-                ),
+                    
+                    MecaderiaBolsaPage(),
+                    
+                    SizedBox(height: 10),
               
-              ]
-            )
-          )
-          
-        ],
+                    Row(
+                      children: [
+                        SizedBox(width: 5),
+                        Expanded(
+                          child: MercadoPage() 
+                        ),
+              
+                        SizedBox(width: 10),
+              
+                        Expanded(
+                          child: HeladosPage() 
+                        ),
+                      ],
+                    )
+                  ]
+                ),
+              )
+            ),
+          ]
+        )
       ),
     );
   }

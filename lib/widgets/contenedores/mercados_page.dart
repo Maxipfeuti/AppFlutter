@@ -6,11 +6,11 @@ class MercadoPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    
+    final Size size = MediaQuery.of(context).size;
 
     return Container(
-      width:  130,
-      height: 130,
+      width:  size.width *0.8,
+      height: size.height * 0.14,
       decoration: BoxDecoration(
         color: const Color (0xff91E3E4),
         borderRadius: BorderRadius.circular(6), 
