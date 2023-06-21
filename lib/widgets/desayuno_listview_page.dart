@@ -10,26 +10,20 @@ class DesayunoListviewPage extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: SizedBox(
         height: 150,
-        child: Expanded(
-          flex: 2,
-          child: ListView(
-            scrollDirection: Axis.horizontal,
-            physics: const BouncingScrollPhysics(),
-            children: const <Widget>[
-
-              ContenedorDesayuno( 
-                Color( 0xff63D6FF),
-                Color( 0xff26AEDF)
-              ),
-
-              SizedBox(width: 10 ),
-              
-              ContenedorDesayuno(
-                Color(0xffC63A60),
-                Color(0xffCA3249)
-              ),
-            ]
-          )
+        child: ListView(
+          scrollDirection: Axis.horizontal,
+          physics: const BouncingScrollPhysics(),
+          children: const <Widget>[
+            ContenedorDesayuno( 
+              Color( 0xff63D6FF),
+              Color( 0xff26AEDF)
+            ),
+            SizedBox(width: 10 ),
+            ContenedorDesayuno(
+              Color(0xffC63A60),
+              Color(0xffCA3249)
+            ),
+          ]
         )
       )
     );
@@ -43,7 +37,7 @@ class ContenedorDesayuno extends StatelessWidget {
   final Color colors2;
 
   const ContenedorDesayuno(
-    this.colors1, this.colors2
+    this.colors1, this.colors2, {super.key}
   );
 
   @override
@@ -115,29 +109,48 @@ class Descuento extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width:  155,
       height: 60,
-      color: Colors.yellow,
-      child: const Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.center,
+      child: Row(
         children: [
+    
+          Expanded(
+            flex: 15,
+            child: Container(
+              color: Colors.yellow,
+              child: const Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
           
-          Text(
-            'Con hasta',
-            style: TextStyle(
-              fontSize: 12
+                  Padding(
+                    padding: EdgeInsets.only(left: 5),
+                    child: Text(
+                      'Con hasta',
+                      style: TextStyle(
+                        fontSize: 12
+                      ),
+                    ),
+                  ),
+          
+                  Padding(
+                    padding: EdgeInsets.only(left: 5),
+                    child: Text(
+                      '50 % OFF',
+                      style: TextStyle(
+                        fontSize: 30,
+                        fontWeight: FontWeight.bold
+                      ),
+                    ),
+                  )
+                ],
+              ),
             ),
           ),
           
-          Text(
-            '50 % OFF',
-            style: TextStyle(
-              fontSize: 30
-            ),
-          )
-        ],
+          Expanded(child: Container(color: Colors.white,))
+        ]
       ),
     );
   }

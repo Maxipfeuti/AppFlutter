@@ -33,8 +33,6 @@ class CustomButtonPlusGratis extends StatelessWidget {
           _BigBottonBackground(color1, color2),
       
           Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
 
               Image.network(
@@ -90,11 +88,9 @@ class _BigBottonBackground extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    final Size size = MediaQuery.of(context).size;
-
     return Container(
-      width: size.width,
-      height: size.height * 0.1,
+      width: double.infinity,
+      height: 100,
       margin: const EdgeInsets.all( 20 ),
       decoration: BoxDecoration(
         boxShadow: <BoxShadow>[

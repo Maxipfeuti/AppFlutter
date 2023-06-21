@@ -10,6 +10,10 @@ export 'desayuno_listview_page.dart';
 
 export 'navigation_page.dart';
 
+export 'secondpage_listview.dart';
+
+export 'restaurantes_listview.dart';
+
 
 export 'contenedores/hamburguesa_page.dart';
 export 'contenedores/mercaderia_bolsa_page.dart';

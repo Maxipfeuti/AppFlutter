@@ -2,16 +2,28 @@ import 'package:flutter/material.dart';
 
 
 class BuscadorLocales extends StatelessWidget {
-  const BuscadorLocales({super.key});
+  
+  final String text;
+  final double width;
+  final double height;
+  
+  const BuscadorLocales({
+    super.key, 
+    required this.text, required this.width, required this.height
+  });
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.symmetric(horizontal: 20),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Stack(
         children: [
 
-          Contenedor(),
+          Contenedor( 
+            text:   text,
+            height: height,
+            width:  width, 
+          ),
 
         ],
       )
@@ -21,34 +33,41 @@ class BuscadorLocales extends StatelessWidget {
 
 
 class Contenedor extends StatelessWidget {
+
+  final String text;
+  final double width;
+  final double height;
+
+
   const Contenedor({
-    super.key,
+    super.key, 
+    required this.text, 
+    required this.width, 
+    required this.height,
   });
 
   @override
   Widget build(BuildContext context) {
 
-    final screenSize = MediaQuery.of(context).size;
-
     return Container(
-      padding: const EdgeInsets.only(left: 20),
+      padding: const EdgeInsets.only(left: 10),
       alignment: Alignment.centerLeft,
-      width: screenSize.width,
-      height: 65,
+      width: width,
+      height: height,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(6),
-        border: const Border(
-          top: BorderSide(),
-          bottom: BorderSide(),
-          right: BorderSide(),
-          left: BorderSide(),
+        borderRadius: BorderRadius.circular(4),
+        border: Border(
+          top:    BorderSide(color: Colors.black.withOpacity(0.2)),
+          bottom: BorderSide(color: Colors.black.withOpacity(0.2)),
+          right:  BorderSide(color: Colors.black.withOpacity(0.2)),
+          left:   BorderSide(color: Colors.black.withOpacity(0.2)),
         ),
       ),
       child: Row(
         children:[ 
 
           Text(
-            'Buscar locales',
+            text,
             style: TextStyle(
               fontSize: 20,
               color: Colors.black.withOpacity(0.6)
@@ -59,21 +78,14 @@ class Contenedor extends StatelessWidget {
 
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Container(
-              width:  40,
-              height: 40,
-              decoration: BoxDecoration(
-                color: const Color(0xffE92B74),
-                borderRadius: BorderRadius.circular(6),
-              ),
-              child:IconButton(
+            child:
+              IconButton(
                 iconSize: 25,
-                color: Colors.white.withOpacity(0.6),
+                color: Colors.black.withOpacity(0.7),
                 icon: const Icon(Icons.search_outlined),
                 onPressed: (){}, 
               )
             ),
-          ),
         ]
       ),
     );

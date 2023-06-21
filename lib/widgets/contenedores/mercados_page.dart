@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class MercadoPage extends StatelessWidget {
   const MercadoPage({super.key});
@@ -6,40 +7,43 @@ class MercadoPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    final Size size = MediaQuery.of(context).size;
 
-    return Container(
-      width:  size.width *0.8,
-      height: size.height * 0.14,
-      decoration: BoxDecoration(
-        color: const Color (0xff91E3E4),
-        borderRadius: BorderRadius.circular(6), 
-      ),
-      child: const Stack(
-        children: [
-
-          Positioned(
-            top: 10,
-            left: 5,
-            child: Text(
-              'Mercados',
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold
+    return GestureDetector(
+      onTap: (){
+        context.push('/pages/segunda_pagina_page.dart');
+      },
+      child: Container(
+        height: 140,
+        decoration: BoxDecoration(
+          color: const Color (0xff91E3E4),
+          borderRadius: BorderRadius.circular(6), 
+        ),
+        child: Column(
+          children: [
+    
+            Container(
+              alignment: Alignment.topLeft,
+              padding: const EdgeInsets.only(top: 10, left: 5),
+              child: const Text(
+                'Mercados',
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold
+                ),
               ),
             ),
-          ),
-  
-          Positioned(
-            right:  -5,
-            bottom: -25,
-            child: Image(
-              width:  100,
-              height: 100,
-              image: AssetImage('assets/imgs/canasto.png')
+      
+            Container(
+              alignment: Alignment.bottomRight,
+              padding: const EdgeInsets.only(right: 5),
+              child: const Image(
+                width:  84,
+                height: 84,
+                image: AssetImage('assets/imgs/canasto.png')
+              ),
             ),
-          )
-        ],
+          ],
+        ),
       ),
     );
   }
