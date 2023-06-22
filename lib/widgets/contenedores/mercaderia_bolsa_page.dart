@@ -19,24 +19,26 @@ class MecaderiaBolsaPage extends StatelessWidget {
         child: Row(
           children: [
     
-            Container(
-              alignment: Alignment.topLeft,
-              padding: const EdgeInsets.only(top: 20, left: 10 ),
-              child: Text(
-                'Pedidos Ya Market',
-                style: TextStyle(
-                  fontSize: 18, 
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white.withOpacity(0.8)
+            Expanded(
+              flex: 2,
+              child: Container(
+                alignment: Alignment.topLeft,
+                padding: const EdgeInsets.only(top: 20,left: 10),
+                child: Text(
+                  'Pedidos Ya Market',
+                  style: TextStyle(
+                    fontSize: 18, 
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white.withOpacity(0.8)
+                  ),
                 ),
               ),
             ),
     
             const SizedBox(width: 20),
     
-            Container(
-              alignment: Alignment.centerRight,
-              child: const Image(
+            const Expanded(
+              child: Image(
                 image: AssetImage(
                 'assets/imgs/bolsa_02.png',
                 )

@@ -15,35 +15,32 @@ class PrimeraPaginaPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: Column(
-        children: [
-          CustomAppbar(),
-          
-          BuscadorLocales( 
-            text: 'Buscar locales', 
-            width: double.infinity ,
-            height: 50,
-          ),
-          
-          SizedBox( height: 5 ),
-          
-          PlusGratisButton(),
-          
-          SizedBox( height: 15 ),
-          
-          ContenedorPrincipal(),
-          
-          SizedBox( height: 15 ),
-          
-          CustomListView(),
-          
-          SizedBox( height: 25 ),
-          
-          DesayunoListviewPage(),
-          
-          SizedBox( height: 37 ),
-          
-        ],
+      body: SingleChildScrollView(
+        physics: BouncingScrollPhysics(),
+        child: Column(
+              children: [
+                CustomAppbar(),
+                
+                BuscadorLocales( 
+                  text: 'Buscar locales', 
+                  height: 50,
+                  width: double.infinity,
+                ),
+                
+                PlusGratisButton(),
+                
+                ContenedorPrincipal(),
+                
+                SizedBox( height: 25 ),
+                
+                CustomListView(),
+                
+                SizedBox( height: 30 ),
+                
+                DesayunoListviewPage(),
+                
+              ],
+            ),
       ),
       bottomNavigationBar: NavigationPage(),
     );

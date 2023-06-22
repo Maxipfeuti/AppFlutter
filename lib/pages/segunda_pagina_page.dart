@@ -21,17 +21,22 @@ class SegundaPaginaPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               
-              IconButton(
-                icon: const Icon(Icons.chevron_left, size: 60,),
-                onPressed: (){
-                  context.pop();
-                }
+              Expanded(
+                child: IconButton(
+                  icon: const Icon(Icons.chevron_left, size: 60,),
+                  onPressed: (){
+                    context.pop();
+                  }
+                ),
               ),
         
-              const BuscadorLocales( 
-                text: 'Buscar Restaurantes',
-                width:  350,
-                height: 50,
+              const Expanded(
+                flex: 5,
+                child: BuscadorLocales( 
+                  text: 'Buscar Restaurantes',
+                  height: 50,
+                  width:double.infinity,
+                ),
               ),
             ]
           ),
