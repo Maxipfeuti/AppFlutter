@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
-import 'package:proyecto_01_app/bloc/navigation/navigation_page_bloc.dart';
+
 
 import '../widgets/widgets.dart';
 
@@ -15,41 +14,38 @@ class PrimeraPaginaPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => NavigationPageBloc(),
-      child: const Scaffold(
-        body: Column(
-          children: [
-            CustomAppbar(),
-            
-            BuscadorLocales( 
-              text: 'Buscar locales', 
-              width: double.infinity ,
-              height: 50,
-            ),
-            
-            SizedBox( height: 5 ),
-            
-            PlusGratisButton(),
-            
-            SizedBox( height: 15 ),
-            
-            ContenedorPrincipal(),
-            
-            SizedBox( height: 15 ),
-            
-            CustomListView(),
-            
-            SizedBox( height: 25 ),
-            
-            DesayunoListviewPage(),
-            
-            SizedBox( height: 37 ),
-            
-          ],
-        ),
-        bottomNavigationBar: NavigationPage(),
+    return const Scaffold(
+      body: Column(
+        children: [
+          CustomAppbar(),
+          
+          BuscadorLocales( 
+            text: 'Buscar locales', 
+            width: double.infinity ,
+            height: 50,
+          ),
+          
+          SizedBox( height: 5 ),
+          
+          PlusGratisButton(),
+          
+          SizedBox( height: 15 ),
+          
+          ContenedorPrincipal(),
+          
+          SizedBox( height: 15 ),
+          
+          CustomListView(),
+          
+          SizedBox( height: 25 ),
+          
+          DesayunoListviewPage(),
+          
+          SizedBox( height: 37 ),
+          
+        ],
       ),
+      bottomNavigationBar: NavigationPage(),
     );
   }
 }

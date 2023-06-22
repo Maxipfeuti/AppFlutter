@@ -50,7 +50,7 @@ class SecondpageListview extends StatelessWidget {
                 SizedBox(width: 15),
                 Box( text: 'Envío gratis' ),
                 SizedBox(width: 15),
-                Box( text: 'Zonas' ),
+                Box( text: 'Beneficios' ),
 
               ]
             )

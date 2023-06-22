@@ -14,7 +14,7 @@ List <BottomNavigationBarItem> bottomNavItems = const <BottomNavigationBarItem>[
     label: 'Promociones'
   ),
   BottomNavigationBarItem(
-    icon: FaIcon(FontAwesomeIcons.square),
+    icon: Icon(Icons.list_alt_outlined),
     label: 'Pedidos'
   ),
       
