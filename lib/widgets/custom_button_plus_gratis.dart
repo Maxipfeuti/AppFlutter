@@ -42,11 +42,12 @@ class CustomButtonPlusGratis extends StatelessWidget {
               ),
               
               Expanded(
+                flex: 3,
                 child: Column(
                   children: [
                     Text(
                       titulo, 
-                      style: const TextStyle(color: Colors.white, fontSize: 20, letterSpacing: 1.5),
+                      style: const TextStyle(color: Colors.white, fontSize: 18, letterSpacing: 1.5),
                     ),
                     const SizedBox( height: 5 ),
                     Text(

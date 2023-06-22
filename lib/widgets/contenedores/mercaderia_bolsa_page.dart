@@ -27,7 +27,7 @@ class MecaderiaBolsaPage extends StatelessWidget {
                 child: Text(
                   'Pedidos Ya Market',
                   style: TextStyle(
-                    fontSize: 18, 
+                    fontSize: 15, 
                     fontWeight: FontWeight.bold,
                     color: Colors.white.withOpacity(0.8)
                   ),

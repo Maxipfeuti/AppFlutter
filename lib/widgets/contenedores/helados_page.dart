@@ -12,7 +12,6 @@ class HeladosPage extends StatelessWidget {
         context.push('/pages/segunda_pagina_page.dart');
       },
       child: Container(
-        height: 140,
         decoration: BoxDecoration(
           color: const Color (0xffF5D7EB),
           borderRadius: BorderRadius.circular(6), 
@@ -20,14 +19,16 @@ class HeladosPage extends StatelessWidget {
         child: Column(
           children: [
     
-            Container(
-              alignment: Alignment.topLeft,
-              padding: const EdgeInsets.only(top: 10, left: 5),
-              child: const Text(
-                'Helados',
-                style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold
+            Expanded(
+              child: Container(
+                alignment: Alignment.topLeft,
+                padding: const EdgeInsets.only(top: 10, left: 5),
+                child: const Text(
+                  'Helados',
+                  style: TextStyle(
+                    fontSize: 15,
+                    fontWeight: FontWeight.bold
+                  ),
                 ),
               ),
             ),

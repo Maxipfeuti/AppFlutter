@@ -17,22 +17,29 @@ class HamburguesaPage extends StatelessWidget {
           color: const Color(0xffEB9E0E),
           borderRadius: BorderRadius.circular(6)
         ),
-        child: const Column(
+        child:  Column(
           children: [
             
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
       
-            Text(
-                'Restaurantes',
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold,),
+            Expanded(
+              child: Container(
+                alignment: Alignment.topLeft,
+                padding: const EdgeInsets.only(left: 10),
+                child: const Text(
+                    'Restaurantes',
+                    style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold,),
+                  ),
               ),
-      
-            SizedBox(height: 80),
+            ),
             
-            Image(
-              image: AssetImage(
-                'assets/imgs/ham_02.png',
-              )
+            const Expanded(
+              flex: 2,
+              child: Image(
+                image: AssetImage(
+                  'assets/imgs/hamb_02.png',
+                )
+              ),
             ),
           ]
         ),
